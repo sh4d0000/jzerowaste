@@ -1,6 +1,8 @@
 package com.zerowaste.model;
 
-public class RecipeReview implements Model {
+import com.zerowaste.rest.ResourceIdentifiable;
+
+public class RecipeReview implements Model, ResourceIdentifiable {
 
 	private Long id;
 	private String briefReview;
@@ -56,5 +58,38 @@ public class RecipeReview implements Model {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	@Override
+	public String getGetURI(Long id) {
+		return BASE_URI + RECIPE_REVIEWS_SUB_URI + id;
+	}
 
+	@Override
+	public String getAllURI() {
+		return BASE_URI + RECIPE_REVIEWS_SUB_URI;
+	}
+
+	@Override
+	public String getPostURI() {
+		return BASE_URI + RECIPE_REVIEWS_SUB_URI;		
+	}
+
+	@Override
+	public String getPutURI() {
+		return BASE_URI + RECIPE_REVIEWS_SUB_URI + id;
+	}
+
+	@Override
+	public String getDeleteURI() {
+		return BASE_URI + RECIPE_REVIEWS_SUB_URI + id;
+	}
+
+	@Override
+	public String toString() {
+		return "RecipeReview [id=" + id + ", briefReview=" + briefReview + ", review=" + review + ", rating=" + rating
+				+ ", recipe=" + recipe + ", user=" + user + "]";
+	}
+
+	
+	
 }
