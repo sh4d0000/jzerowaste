@@ -1,3 +1,10 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
 *.pydevproject
 .project
 .metadata
@@ -12,6 +19,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.gradle
 
 # External tool builders
 .externalToolBuilders/
